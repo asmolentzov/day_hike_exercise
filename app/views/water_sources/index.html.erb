@@ -1,0 +1,8 @@
+<h1>Water Sources for Trail <%= @trail.name %></h1>
+
+<% @trail.water_sources.each do |water_source| %>
+  <div id="watersource-<%= water_source.id %>">
+    <p><%= link_to water_source.name, trail_water_source_path(@trail, water_source) %></p>
+    <p>Mile Marker: <%= water_source.mile_marker %></p>
+  </div>
+<% end %>

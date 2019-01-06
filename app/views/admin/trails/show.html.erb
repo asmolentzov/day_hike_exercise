@@ -1,0 +1,22 @@
+<h1><%= @trail.name %></h1>
+<p>
+  <%= @trail.address %>
+</p>
+
+<p>
+  <%= link_to 'Water Sources', admin_trail_water_sources_path(@trail) %>
+</p>
+<p>
+  <%= link_to 'Edit Trail', edit_admin_trail_path(@trail) %>
+</p>
+
+<p>
+  Total number of hiking trips that include this trail: <%= @trail.total_trips %>
+  </p>
+
+<% @trail.trips.each do |trip| %>
+  <div id="trip-<%= trip.id %>">
+    <%= trip.name %>
+    <%= trip.total_distance %>
+  </div>
+<% end %>
